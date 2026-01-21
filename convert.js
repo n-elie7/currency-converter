@@ -13,7 +13,13 @@ function main() {
     console.log("")
     console.log(`Available Currencies:`)
 
-    console.log(`USD: ${currencies.USD} \nEUR: ${currencies.EUR} \nGBP: ${currencies.GBP} \nJPY: ${currencies.JPY} \nAUD: ${currencies.AUD}`);
+    // console.log(`USD: ${currencies.USD} \nEUR: ${currencies.EUR} \nGBP: ${currencies.GBP} \nJPY: ${currencies.JPY} \nAUD: ${currencies.AUD}`);
+    
+    console.log("")
+    for(const [key, value] of Object.entries(currencies)) {
+        console.log(`${key}: ${value}`)
+    }
+
     console.log("")
 
     console.log("What do you want to do? ");

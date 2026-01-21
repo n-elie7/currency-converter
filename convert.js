@@ -3,18 +3,23 @@ function main() {
 
     const currencies = {
         USD: 1.0,
-        EUR: 0.85,
-        GBP: 0.75,
-        JPY: 157.9,
-        AUD: 1.35
-    }
+        EUR: 0.92,
+        GBP: 0.79,
+        JPY: 149.50,
+        AUD: 1.52,
+        CAD: 1.36,
+        CHF: 0.88,
+        CNY: 7.24,
+        INR: 83.12,
+        RWF: 1320.00
+    };
 
     console.log("Welcome to Currency Converter!");
     console.log("")
     console.log(`Available Currencies:`)
 
     // console.log(`USD: ${currencies.USD} \nEUR: ${currencies.EUR} \nGBP: ${currencies.GBP} \nJPY: ${currencies.JPY} \nAUD: ${currencies.AUD}`);
-    
+
     console.log("")
     for(const [key, value] of Object.entries(currencies)) {
         console.log(`${key}: ${value}`)

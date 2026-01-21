@@ -113,10 +113,7 @@ button:active {
   border-radius: 10px;
   text-align: center;
   margin-top: 25px;
-  color: #666;
-  font-size: 14px;
-}
-
-.rate-info strong {
   color: #333;
+  font-size: 14px;
+  font-weight: bold;
 }

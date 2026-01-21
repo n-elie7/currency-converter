@@ -84,6 +84,9 @@ function convertor() {
     })
     
     amount.addEventListener("change", () => {
+        fromRate = currencies[fromCurrency.value];
+        toRate = currencies[toCurrency.value];
+
         convertedCurrencyResult.value = ((toRate / fromRate) * amount.value).toFixed(2);
     })
 

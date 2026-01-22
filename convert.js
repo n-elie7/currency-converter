@@ -1,6 +1,6 @@
-function main() {
-    const input = require("sync-input");
+const input = require("sync-input");
 
+function main() {
     const currencies = {
         USD: 1.0,
         EUR: 0.92,
@@ -25,28 +25,35 @@ function main() {
         console.log(`${key}: ${value}`)
     }
 
-    console.log("")
-
-    console.log("What do you want to do? ");
-    console.log("")
-    console.log("1. Convert Currencies");
-    console.log("2. Exit program");
-    console.log("")
-
-    const choice = input("Enter your choice? ")
-
-    if (choice == 1) {
-        const result = convetor(input, currencies)
+    while (true) {
         console.log("")
-        console.log(`Converted Currency: ${result}`)
-    } else {
+
+        console.log("What do you want to do? ");
         console.log("")
-        console.log("GoodBye!")
-        process.exit
-    } 
+        console.log("1. Convert Currencies");
+        console.log("2. Exit program");
+        console.log("")
+
+        const choice = input("Enter your choice? ")
+
+        if (choice === "1") {
+            const result = convertor(currencies)
+            console.log("")
+            console.log(`Converted Currency: ${result}`)
+        } else if (choice === "2") {
+            console.log("")
+            console.log("GoodBye!")
+            break
+        } else {
+            console.log("")
+            console.log("Invalid choice. Please try again.")
+            continue
+        }
+    }
+    
 }
 
-function convetor(input, currencies) {
+function convertor(currencies) {
     console.log("")
     const fromCurrency = input("From Currency: ").toUpperCase();
     const toCurrency = input("To Currency: ").toUpperCase();
@@ -55,9 +62,9 @@ function convetor(input, currencies) {
     const fromRate = currencies[fromCurrency];
     const toRate = currencies[toCurrency];
 
-    const convertedCurrency = (toRate / fromRate) * amount;
+    const convertedCurrency = ((toRate / fromRate) * amount).toFixed(2);
 
-    return `${convertedCurrency}${toCurrency}`
+    return `${convertedCurrency} ${toCurrency}`
 }
 
 main();
